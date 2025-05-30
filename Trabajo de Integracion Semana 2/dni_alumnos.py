@@ -167,6 +167,21 @@ def digitos_compartidos(conjunto1, conjunto2, conjunto3, conjunto4, conjunto5):
 
 print("Dígitos compartidos entre todos los conjuntos:",digitos_compartidos(conjunto_unico_molina, conjunto_unico_mele, conjunto_unico_martinez, conjunto_unico_meshler, conjunto_unico_masseroni))
 
+# Diversidad numérica alta si tiene mas de 6 digitos únicos
+
+def diversidad_numerica_alta(conjunto):
+    if len(conjunto) > 6:  # Si el conjunto tiene más de 6 dígitos únicos
+        return "Diversidad Numerica Alta"
+    else:
+        return "Diversidad Numerica Baja"
+    
+print("Diversidad numérica del DNI de Molina:", diversidad_numerica_alta(conjunto_unico_molina))
+print("Diversidad numérica del DNI de Mele:", diversidad_numerica_alta(conjunto_unico_mele))
+print("Diversidad numérica del DNI de Martinez:", diversidad_numerica_alta(conjunto_unico_martinez))
+print("Diversidad numérica del DNI de Meshler:", diversidad_numerica_alta(conjunto_unico_meshler))
+print("Diversidad numérica del DNI de Masseroni:", diversidad_numerica_alta(conjunto_unico_masseroni))
+
+
 
 # print("------------Logica------------")
 
