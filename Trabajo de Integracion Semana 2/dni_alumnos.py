@@ -48,15 +48,16 @@ print("Conjunto de dígitos unicos del DNI de Masseroni: ", conjunto_masseroni)
 # print("Conjunto único de Masseroni:", conjunto_unico_masseroni)
 
 
-# Función para sumar los dígitos de un DNI
-def suma_digitos(conjunto_dni):
-    return sum(int(digit) for digit in conjunto_dni)
+# # Función para sumar los dígitos de un DNI
+# NO PEDIDA
+# def suma_digitos(conjunto_dni):
+#     return sum(int(digit) for digit in conjunto_dni)
 
-print("Suma de los dígitos del DNI de Molina: ", suma_digitos(conjunto_molina))
-print("Suma de los dígitos del DNI de Mele: ", suma_digitos(conjunto_mele))
-print("Suma de los dígitos del DNI de Martinez: ", suma_digitos(conjunto_martinez))
-print("Suma de los dígitos del DNI de Meshler: ", suma_digitos(conjunto_meshler))
-print("Suma de los dígitos del DNI de Masseroni: ", suma_digitos(conjunto_masseroni))
+# print("Suma de los dígitos del DNI de Molina: ", suma_digitos(conjunto_molina))
+# print("Suma de los dígitos del DNI de Mele: ", suma_digitos(conjunto_mele))
+# print("Suma de los dígitos del DNI de Martinez: ", suma_digitos(conjunto_martinez))
+# print("Suma de los dígitos del DNI de Meshler: ", suma_digitos(conjunto_meshler))
+# print("Suma de los dígitos del DNI de Masseroni: ", suma_digitos(conjunto_masseroni))
 
 # Funcion para unir dos conjuntos
 def union_conjuntos(conjunto1, conjunto2):
@@ -70,9 +71,11 @@ def union_conjuntos(conjunto1, conjunto2):
             conjunto_union.append(i)
     return conjunto_union
 
-print("DNI de Molina: ", conjunto_molina)
-print("DNI de Mele: ", conjunto_mele)
+# Vista de las uniones de los conjuntos de molina con los demás
 print("Unión de Molina y Mele: ", union_conjuntos(conjunto_molina, conjunto_mele))
+print("Unión de Molina y Martinez: ", union_conjuntos(conjunto_molina, conjunto_martinez))
+print("Unión de Molina y Meshler: ", union_conjuntos(conjunto_molina, conjunto_meshler))
+print("Unión de Molina y Masseroni: ", union_conjuntos(conjunto_molina, conjunto_masseroni))
 
 
 # Función para encontrar la intersección de dos conjuntos
