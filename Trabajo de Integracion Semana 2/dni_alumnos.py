@@ -87,8 +87,12 @@ def interseccion_conjuntos(conjunto1, conjunto2):
     return conjunto_interseccion
 
 print("Intersección de Molina y Mele: ", interseccion_conjuntos(conjunto_molina, conjunto_mele))
+print("Intersección de Molina y Martinez: ", interseccion_conjuntos(conjunto_molina, conjunto_martinez))
+print("Intersección de Molina y Meshler: ", interseccion_conjuntos(conjunto_molina, conjunto_meshler))
+print("Intersección de Molina y Masseroni: ", interseccion_conjuntos(conjunto_molina, conjunto_masseroni))
 
-# Expresión lógica 1: "Los dígitos que están en conjunto1 y no están en conjunto2"
+
+# Función para encontrar la diferencia entre dos conjuntos
 def diferencia_entre_pares(conjunto1, conjunto2):
     conjunto_diferencia = []
     for i in conjunto1:
@@ -97,7 +101,17 @@ def diferencia_entre_pares(conjunto1, conjunto2):
     return conjunto_diferencia
  
 print("Diferencia entre Molina y Mele: ", diferencia_entre_pares(conjunto_molina, conjunto_mele))
+print("Diferencia entre Molina y Martinez: ", diferencia_entre_pares(conjunto_molina, conjunto_martinez))
+print("Diferencia entre Molina y Meshler: ", diferencia_entre_pares(conjunto_molina, conjunto_meshler))
+print("Diferencia entre Molina y Masseroni: ", diferencia_entre_pares(conjunto_molina, conjunto_masseroni))
 
+# def diferencia_expresion(A, B):
+#      return A - B
+
+# print("Diferencia entre Molina y Mele (expresión): ", diferencia_expresion(conjunto_molina, conjunto_mele))
+
+
+# Función para encontrar la diferencia simétrica entre dos conjuntos
 def diferencia_simetrica(conjunto1, conjunto2):
     conjunto_diferencia_simetrica = []
     for i in conjunto1:
@@ -111,32 +125,48 @@ def diferencia_simetrica(conjunto1, conjunto2):
     return conjunto_diferencia_simetrica
 
 
+# Vista de las diferencias simétricas entre los conjuntos de molina con los demás
 print("Diferencia simétrica entre Molina y Mele: ", diferencia_simetrica(conjunto_molina, conjunto_mele))
-print("Diferencia simétrica entre Molina y Martinez: ", diferencia_simetrica(conjunto_mele, conjunto_molina))
+print("Diferencia simétrica entre Molina y Martinez: ", diferencia_simetrica(conjunto_molina, conjunto_martinez))
+print("Diferencia simétrica entre Molina y Meshler: ", diferencia_simetrica(conjunto_molina, conjunto_meshler))
+print("Diferencia simétrica entre Molina y Masseroni: ", diferencia_simetrica(conjunto_molina, conjunto_masseroni))
 
-print("------------Logica------------")
+# def diferencia_simetrica_expresion(A, B):
+#      return A ^ B
+
+# print("Diferencia simétrica entre Molina y Mele (expresion): ", diferencia_simetrica_expresion(conjunto_molina, conjunto_mele))
 
 
-set_molina = set(conjunto_molina)
-set_mele = set(conjunto_mele)
-set_martinez = set(conjunto_martinez)
 
-# Expresión lógica 1: "Los dígitos que están en A y no en B"
-def diferencia_expresion(A, B):
-    return A - B
 
-# Expresión lógica 2: "Los dígitos que están en A o en B, pero no en ambos"
-def diferencia_simetrica_expresion(A, B):
-    return A ^ B
+# print("------------Logica------------")
 
-# Expresión lógica 3: "Los dígitos que aparecen en los tres DNIs a la vez"
-def interseccion_tres_conjuntos(A, B, C):
-    return A & B & C
 
-expresion_1 = diferencia_expresion(set_molina, set_mele)
-expresion_2 = diferencia_simetrica_expresion(set_molina, set_mele)
-expresion_3 = interseccion_tres_conjuntos(set_molina, set_mele, set_martinez)
+# # Expresión lógica 1: "Los dígitos que están en A y no en B"
+# def diferencia_expresion(A, B):
+#     return A - B
 
-print("Expresión 1 (A y no en B):", expresion_1)
-print("Expresión 2 (A o B, pero no en ambos):", expresion_2)
-print("Expresión 3 (En los tres DNIs):", expresion_3)
+#------------------------------------------
+
+# # Expresión lógica 2: "Los dígitos que están en A o en B, pero no en ambos"
+# def diferencia_simetrica_expresion(A, B):
+#     return A ^ B
+
+#------------------------------------------
+# # Expresión lógica 3: "Los dígitos que aparecen en los tres DNIs a la vez"
+# def interseccion_tres_conjuntos(A, B, C):
+#     return A & B & C
+
+# def interseccion_varios_conjuntos(*conjuntos):
+#     interseccion = conjuntos[0]  # Empezamos con el primer conjunto
+#     for conjunto in conjuntos[1:]:  # Iteramos sobre los restantes
+#         interseccion &= conjunto  # Aplicamos la intersección
+#     return interseccion
+
+# # Ejemplo de uso
+# conjunto_molina = {'3', '9', '8', '2', '4', '5'}
+# conjunto_mele = {'4', '5', '1', '2', '7', '6', '3', '9'}
+# conjunto_martinez = {'5', '6', '7', '8', '9', '0'}
+
+# resultado = interseccion_varios_conjuntos(conjunto_molina, conjunto_mele, conjunto_martinez)
+# print("Dígitos que aparecen en los tres DNIs:", resultado)
