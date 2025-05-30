@@ -13,24 +13,32 @@ conjunto_meshler = []
 conjunto_masseroni = []
 
 # Función para formar un conjunto a partir de un DNI
-def formar_conjunto_dni(dni):
-    list_dni = []
-    for i in range(0, len(dni)):
-         list_dni.append (dni[i])
-    return list_dni
+def formar_conjunto_unico(dni):
+    return set(dni)
 
-# Formamos los conjuntos a partir de los DNIs
-conjunto_molina = formar_conjunto_dni(dni_Molina)
-conjunto_mele = formar_conjunto_dni(dni_Mele)
-conjunto_martinez = formar_conjunto_dni(dni_Martinez)
+# Formamos los conjuntos a partir de los DNIs y los asignamos a las variables correspondientes
+conjunto_molina = formar_conjunto_unico(dni_Molina)
+conjunto_mele = formar_conjunto_unico(dni_Mele)
+conjunto_martinez = formar_conjunto_unico(dni_Martinez)
+conjunto_meshler = formar_conjunto_unico(dni_Meshler)
+conjunto_masseroni = formar_conjunto_unico(dni_Masseroni)
+
+# Imprimimos los conjuntos
+print("Conjunto de dígitos unicos del DNI de Molina: ", conjunto_molina)
+print("Conjunto de dígitos unicos del DNI de Mele: ", conjunto_mele)
+print("Conjunto de dígitos unicos del DNI de Martinez: ", conjunto_martinez)
+print("Conjunto de dígitos unicos del DNI de Meshler: ", conjunto_meshler)
+print("Conjunto de dígitos unicos del DNI de Masseroni: ", conjunto_masseroni)
 
 # Función para sumar los dígitos de un DNI
-def suma_digitos(dni):
-    return sum(int(digit) for digit in dni)
+def suma_digitos(conjunto_dni):
+    return sum(int(digit) for digit in conjunto_dni)
 
-print("Suma de los dígitos del DNI de Molina: ", suma_digitos(dni_Molina))
-print("Suma de los dígitos del DNI de Mele: ", suma_digitos(dni_Mele))
-print("Suma de los dígitos del DNI de Martinez: ", suma_digitos(dni_Martinez))
+print("Suma de los dígitos del DNI de Molina: ", suma_digitos(conjunto_molina))
+print("Suma de los dígitos del DNI de Mele: ", suma_digitos(conjunto_mele))
+print("Suma de los dígitos del DNI de Martinez: ", suma_digitos(conjunto_martinez))
+print("Suma de los dígitos del DNI de Meshler: ", suma_digitos(conjunto_meshler))
+print("Suma de los dígitos del DNI de Masseroni: ", suma_digitos(conjunto_masseroni))
 
 # Funcion para unir dos conjuntos
 def union_conjuntos(conjunto1, conjunto2):
