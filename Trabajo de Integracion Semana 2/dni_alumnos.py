@@ -1,4 +1,5 @@
 # DNI alumnos
+# Ingreso de los DNIs (reales o ficticios).
 dni_Molina = "31476619"
 dni_Mele = "36552513"
 dni_Martinez = "39964587"
@@ -17,6 +18,7 @@ def formar_conjunto_unico(dni):
     return set(dni)
 
 # Formamos los conjuntos a partir de los DNIs y los asignamos a las variables correspondientes
+# Generación automática de los conjuntos de dígitos únicos usando la funcion formar_conjunto_unico.
 conjunto_molina = formar_conjunto_unico(dni_Molina)
 conjunto_mele = formar_conjunto_unico(dni_Mele)
 conjunto_martinez = formar_conjunto_unico(dni_Martinez)
@@ -29,6 +31,22 @@ print("Conjunto de dígitos unicos del DNI de Mele: ", conjunto_mele)
 print("Conjunto de dígitos unicos del DNI de Martinez: ", conjunto_martinez)
 print("Conjunto de dígitos unicos del DNI de Meshler: ", conjunto_meshler)
 print("Conjunto de dígitos unicos del DNI de Masseroni: ", conjunto_masseroni)
+
+# print("Opcion 2 de Generación automática de los conjuntos de dígitos únicos")
+
+# # Conjuntos de dígitos únicos de los DNIs generados automaticamente
+# conjunto_unico_molina = set(dni_Molina)
+# conjunto_unico_mele = set(dni_Mele)
+# conjunto_unico_martinez = set(dni_Martinez)
+# conjunto_unico_meshler = set(dni_Meshler)
+# conjunto_unico_masseroni = set(dni_Masseroni)
+
+# print("Conjunto único de Molina:", conjunto_unico_molina)
+# print("Conjunto único de Mele:", conjunto_unico_mele)
+# print("Conjunto único de Martinez:", conjunto_unico_martinez)
+# print("Conjunto único de Meshler:", conjunto_unico_meshler)
+# print("Conjunto único de Masseroni:", conjunto_unico_masseroni)
+
 
 # Función para sumar los dígitos de un DNI
 def suma_digitos(conjunto_dni):
