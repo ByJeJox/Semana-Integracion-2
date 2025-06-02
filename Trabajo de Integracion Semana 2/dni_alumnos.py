@@ -226,4 +226,31 @@ print("Diversidad numérica del DNI de Martilotta:", diversidad_numerica_alta(co
 # resultado = interseccion_varios_conjuntos(conjunto_unico_molina, conjunto_unico_mele, conjunto_unico_martinez)
 # print("Dígitos que aparecen en los tres DNIs:", resultado)
 
+# B. Operaciones con años de nacimiento
+print("-----B. Operaciones con años de nacimiento-----")
+from itertools import product
+
+#Creamos un diccionario con los años de nacimiento de los alumnos
+anios_nacimiento = {
+    "Molina": 1985,
+    "Mele": 1991,
+    "Martinez": 1997,
+    "Meshler": 1990,
+    "Masseroni": 1996,
+    "Martilotta": 1999
+}
+
+# Obtenemos los años de nacimiento en una lista
+lista_anios = list(anios_nacimiento.values())
+
+# Contar cuántos nacieron en años pares e impares utilizando estructuras repetitivas.
+pares = 0
+for anio in lista_anios:
+    if anio % 2 == 0:
+        pares += 1
+
+impares = len(lista_anios) - pares
+
+print(f"Cantidad de alumnos nacidos en años pares: {pares}")
+print(f"Cantidad de alumnos nacidos en años impares: {impares}")
 
