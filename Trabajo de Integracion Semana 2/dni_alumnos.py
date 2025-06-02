@@ -1,3 +1,5 @@
+# A. Operaciones con DNIs
+print("-----A. Operaciones con DNIs-----")
 # DNI alumnos
 # Ingreso de los DNIs (reales o ficticios).
 dni_molina = "31476619"
@@ -5,6 +7,7 @@ dni_mele = "36552513"
 dni_martinez = "39964587"
 dni_meshler = "34433376"
 dni_masseroni = "39600348"
+dni_martilotta = "42095856"
 
 # # Conjuntos de dígitos de los DNIs
 # conjunto_unico_molina = []
@@ -24,6 +27,7 @@ conjunto_unico_mele = formar_conjunto_unico(dni_mele)
 conjunto_unico_martinez = formar_conjunto_unico(dni_martinez)
 conjunto_unico_meshler = formar_conjunto_unico(dni_meshler)
 conjunto_unico_masseroni = formar_conjunto_unico(dni_masseroni)
+conjunto_unico_martilotta = formar_conjunto_unico(dni_martilotta)
 
 # Imprimimos los conjuntos
 print("Conjunto de dígitos unicos del DNI de Molina: ", conjunto_unico_molina)
@@ -31,6 +35,7 @@ print("Conjunto de dígitos unicos del DNI de Mele: ", conjunto_unico_mele)
 print("Conjunto de dígitos unicos del DNI de Martinez: ", conjunto_unico_martinez)
 print("Conjunto de dígitos unicos del DNI de Meshler: ", conjunto_unico_meshler)
 print("Conjunto de dígitos unicos del DNI de Masseroni: ", conjunto_unico_masseroni)
+print("Conjunto de dígitos unicos del DNI de Martilotta: ", conjunto_unico_martilotta)
 
 # print("Opcion 2 de Generación automática de los conjuntos de dígitos únicos")
 
@@ -64,6 +69,7 @@ print("Unión de Molina y Mele: ", union_conjuntos(conjunto_unico_molina, conjun
 print("Unión de Molina y Martinez: ", union_conjuntos(conjunto_unico_molina, conjunto_unico_martinez))
 print("Unión de Molina y Meshler: ", union_conjuntos(conjunto_unico_molina, conjunto_unico_meshler))
 print("Unión de Molina y Masseroni: ", union_conjuntos(conjunto_unico_molina, conjunto_unico_masseroni))
+print("Unión de Molina y Martilotta: ", union_conjuntos(conjunto_unico_molina, conjunto_unico_martilotta))
 
 
 # Función para encontrar la intersección de dos conjuntos
@@ -78,6 +84,7 @@ print("Intersección de Molina y Mele: ", interseccion_conjuntos(conjunto_unico_
 print("Intersección de Molina y Martinez: ", interseccion_conjuntos(conjunto_unico_molina, conjunto_unico_martinez))
 print("Intersección de Molina y Meshler: ", interseccion_conjuntos(conjunto_unico_molina, conjunto_unico_meshler))
 print("Intersección de Molina y Masseroni: ", interseccion_conjuntos(conjunto_unico_molina, conjunto_unico_masseroni))
+print("Intersección de Molina y Martilotta: ", interseccion_conjuntos(conjunto_unico_molina, conjunto_unico_martilotta))
 
 
 # Función para encontrar la diferencia entre dos conjuntos
@@ -92,6 +99,7 @@ print("Diferencia entre Molina y Mele: ", diferencia_entre_pares(conjunto_unico_
 print("Diferencia entre Molina y Martinez: ", diferencia_entre_pares(conjunto_unico_molina, conjunto_unico_martinez))
 print("Diferencia entre Molina y Meshler: ", diferencia_entre_pares(conjunto_unico_molina, conjunto_unico_meshler))
 print("Diferencia entre Molina y Masseroni: ", diferencia_entre_pares(conjunto_unico_molina, conjunto_unico_masseroni))
+print("Diferencia entre Molina y Martilotta: ", diferencia_entre_pares(conjunto_unico_molina, conjunto_unico_martilotta))
 
 # def diferencia_expresion(A, B):
 #      return A - B
@@ -118,6 +126,7 @@ print("Diferencia simétrica entre Molina y Mele: ", diferencia_simetrica(conjun
 print("Diferencia simétrica entre Molina y Martinez: ", diferencia_simetrica(conjunto_unico_molina, conjunto_unico_martinez))
 print("Diferencia simétrica entre Molina y Meshler: ", diferencia_simetrica(conjunto_unico_molina, conjunto_unico_meshler))
 print("Diferencia simétrica entre Molina y Masseroni: ", diferencia_simetrica(conjunto_unico_molina, conjunto_unico_masseroni))
+print("Diferencia simétrica entre Molina y Martilotta: ", diferencia_simetrica(conjunto_unico_molina, conjunto_unico_martilotta))
 
 # def diferencia_simetrica_expresion(A, B):
 #      return A ^ B
@@ -140,6 +149,7 @@ print("Frecuencia de Mele:", contar_frecuencia_dni(dni_mele))
 print("Frecuencia de Martinez:", contar_frecuencia_dni(dni_martinez))
 print("Frecuencia de Meshler:", contar_frecuencia_dni(dni_meshler))
 print("Frecuencia de Masseroni:", contar_frecuencia_dni(dni_masseroni))
+print("Frecuencia de Martilotta:", contar_frecuencia_dni(dni_martilotta))
 
 
 # Función para sumar los dígitos de un DNI
@@ -154,6 +164,7 @@ print("Suma de los dígitos del DNI de Mele: ", suma_digitos_dni(dni_mele))
 print("Suma de los dígitos del DNI de Martinez: ", suma_digitos_dni(dni_martinez))
 print("Suma de los dígitos del DNI de Meshler: ", suma_digitos_dni(dni_meshler))
 print("Suma de los dígitos del DNI de Masseroni: ", suma_digitos_dni(dni_masseroni))
+print("Suma de los dígitos del DNI de Martilotta: ", suma_digitos_dni(dni_martilotta))
 
 
 # Dígito compartido entre todos los conjuntos
@@ -165,7 +176,7 @@ def digitos_compartidos(conjunto1, conjunto2, conjunto3, conjunto4, conjunto5):
             conjunto_digitos_compartidos.append(digito)  # Si el dígito está en todos los conjuntos, lo añadimos
     return conjunto_digitos_compartidos  # Devolvemos el conjunto de dígitos compartidos
 
-print("Dígitos compartidos entre todos los conjuntos:",digitos_compartidos(conjunto_unico_molina, conjunto_unico_mele, conjunto_unico_martinez, conjunto_unico_meshler, conjunto_unico_masseroni))
+print("Dígitos compartidos entre todos los conjuntos:",digitos_compartidos(conjunto_unico_molina, conjunto_unico_mele, conjunto_unico_martinez, conjunto_unico_meshler, conjunto_unico_masseroni, conjunto_unico_martilotta))
 
 # Diversidad numérica alta si tiene mas de 6 digitos únicos
 
@@ -180,7 +191,7 @@ print("Diversidad numérica del DNI de Mele:", diversidad_numerica_alta(conjunto
 print("Diversidad numérica del DNI de Martinez:", diversidad_numerica_alta(conjunto_unico_martinez))
 print("Diversidad numérica del DNI de Meshler:", diversidad_numerica_alta(conjunto_unico_meshler))
 print("Diversidad numérica del DNI de Masseroni:", diversidad_numerica_alta(conjunto_unico_masseroni))
-
+print("Diversidad numérica del DNI de Martilotta:", diversidad_numerica_alta(conjunto_unico_martilotta))
 
 
 # print("------------Logica------------")
@@ -214,3 +225,5 @@ print("Diversidad numérica del DNI de Masseroni:", diversidad_numerica_alta(con
 
 # resultado = interseccion_varios_conjuntos(conjunto_unico_molina, conjunto_unico_mele, conjunto_unico_martinez)
 # print("Dígitos que aparecen en los tres DNIs:", resultado)
+
+
