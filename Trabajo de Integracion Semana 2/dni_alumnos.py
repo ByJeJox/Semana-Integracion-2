@@ -254,3 +254,36 @@ impares = len(lista_anios) - pares
 print(f"Cantidad de alumnos nacidos en años pares: {pares}")
 print(f"Cantidad de alumnos nacidos en años impares: {impares}")
 
+# Si todos nacieron después del 2000, mostrar "Grupo Z".
+es_grupo_z = True
+
+for anio in lista_anios:
+    if anio <= 2000:
+        es_grupo_z = False
+        break
+
+if es_grupo_z:
+    print("Grupo Z")
+else:
+    print("Old School")
+
+# Implementar una función para determinar si un año es bisiesto.
+def es_bisiesto(anio):
+    if (anio % 4 == 0 and anio % 100 != 0) or (anio % 400 == 0):
+        return True
+    return False
+
+# Si alguno nació en año bisiesto, mostrar "Tenemos un año especial".
+if any(es_bisiesto(anio) for anio in lista_anios):
+    print("Tenemos un año especial")
+
+# Calcular el producto cartesiano entre el conjunto de años y el conjunto de edades actuales.
+
+# Calculamos las edades 
+anio_actual = 2025
+edades = {nombre: anio_actual - anio for nombre, anio in anios_nacimiento.items()}
+
+# Producto cartesiano: cada persona con su año de nacimiento y edad
+print("\nRelación entre años de nacimiento y edades:") # Usamos \n para que se imprima en una nueva línea
+for nombre in anios_nacimiento:
+    print(f"({nombre}, {anios_nacimiento[nombre]}) x ({nombre}, {edades[nombre]})")
