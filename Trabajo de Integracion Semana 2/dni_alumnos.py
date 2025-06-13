@@ -24,21 +24,6 @@ for apellido, dni in dni_alumnos.items():
 # Imprimiendo diccionario de conjuntos
 for apellido, conjunto in conjuntos_dni_alumnos.items():
     print(f"{str.capitalize(apellido)}: {conjunto}")
-
-# Función para sumar los dígitos de un DNI
-def suma_digitos_dni(dni):
-    suma = 0  # Inicializamos la suma en 0
-    for digito in dni:  # Recorremos cada carácter del DNI
-        suma += int(digito)  # Convertimos el carácter en número y lo sumamos
-    return suma
-
-# Función para encontrar la intersección de dos conjuntos
-def interseccion_conjuntos(conjunto1, conjunto2):
-    conjunto_interseccion = []
-    for i in conjunto1:
-        if i in conjunto2 and i not in conjunto_interseccion:
-            conjunto_interseccion.append(i)
-    return conjunto_interseccion
     
 # Operacion unir conjuntos
 def menu_union(conjuntos_dni_alumnos):
@@ -61,6 +46,14 @@ def menu_union(conjuntos_dni_alumnos):
             continue
         else:
          print(f"Unión de Molina y {str.capitalize(apellido)}: {union_conjuntos(conjuntos_dni_alumnos['molina'], conjunto)}")
+
+# Función para encontrar la intersección de dos conjuntos
+def interseccion_conjuntos(conjunto1, conjunto2):
+    conjunto_interseccion = []
+    for i in conjunto1:
+        if i in conjunto2 and i not in conjunto_interseccion:
+            conjunto_interseccion.append(i)
+    return conjunto_interseccion
 
 def menu_interseccion(conjuntos_dni_alumnos, interseccion_conjuntos):
     
@@ -132,6 +125,13 @@ def menu_frecuencia(dni_alumnos):
         for digito, count in frecuencias_ordenadas:
             print(f"   Dígito {digito}: aparece {count} {'vez' if count == 1 else 'veces'}")
         print()  # Espacio entre alumnos
+
+# Función para sumar los dígitos de un DNI
+def suma_digitos_dni(dni):
+    suma = 0  # Inicializamos la suma en 0
+    for digito in dni:  # Recorremos cada carácter del DNI
+        suma += int(digito)  # Convertimos el carácter en número y lo sumamos
+    return suma
 
 def menu_suma_digitos(suma_digitos_dni, dni_alumnos):
     
