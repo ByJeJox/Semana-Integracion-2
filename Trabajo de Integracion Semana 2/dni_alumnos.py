@@ -24,6 +24,21 @@ for apellido, dni in dni_alumnos.items():
 # Imprimiendo diccionario de conjuntos
 for apellido, conjunto in conjuntos_dni_alumnos.items():
     print(f"{str.capitalize(apellido)}: {conjunto}")
+
+# Función para sumar los dígitos de un DNI
+def suma_digitos_dni(dni):
+    suma = 0  # Inicializamos la suma en 0
+    for digito in dni:  # Recorremos cada carácter del DNI
+        suma += int(digito)  # Convertimos el carácter en número y lo sumamos
+    return suma
+
+# Función para encontrar la intersección de dos conjuntos
+def interseccion_conjuntos(conjunto1, conjunto2):
+    conjunto_interseccion = []
+    for i in conjunto1:
+        if i in conjunto2 and i not in conjunto_interseccion:
+            conjunto_interseccion.append(i)
+    return conjunto_interseccion
     
 # Operacion unir conjuntos
 def menu_union(conjuntos_dni_alumnos):
@@ -47,15 +62,7 @@ def menu_union(conjuntos_dni_alumnos):
         else:
          print(f"Unión de Molina y {str.capitalize(apellido)}: {union_conjuntos(conjuntos_dni_alumnos['molina'], conjunto)}")
 
-# Función para encontrar la intersección de dos conjuntos
-def interseccion_conjuntos(conjunto1, conjunto2):
-    conjunto_interseccion = []
-    for i in conjunto1:
-        if i in conjunto2 and i not in conjunto_interseccion:
-            conjunto_interseccion.append(i)
-    return conjunto_interseccion
-
-def menu_interseccion(conjuntos_dni_alumnos, interseccion_conjuntos):
+def menu_interseccion(conjuntos_dni_alumnos):
     
     print("\n-----2 - Intersección de conjuntos-----")
     for apellido, conjunto in conjuntos_dni_alumnos.items():
@@ -126,14 +133,7 @@ def menu_frecuencia(dni_alumnos):
             print(f"   Dígito {digito}: aparece {count} {'vez' if count == 1 else 'veces'}")
         print()  # Espacio entre alumnos
 
-# Función para sumar los dígitos de un DNI
-def suma_digitos_dni(dni):
-    suma = 0  # Inicializamos la suma en 0
-    for digito in dni:  # Recorremos cada carácter del DNI
-        suma += int(digito)  # Convertimos el carácter en número y lo sumamos
-    return suma
-
-def menu_suma_digitos(suma_digitos_dni, dni_alumnos):
+def menu_suma_digitos(dni_alumnos):
     
     print("\n-----6 - Suma total dígitos DNI-----")
     # Imprimimos la suma de los dígitos de cada DNI
@@ -188,7 +188,7 @@ def menu_suma_total_digitos_dni(dni_alumnos):
     print("\n-----9 - Evaluacion lógica: Pares de dni con mismo valor en la suma de sus dígitos-----")
     buscar_pares_dni(dni_alumnos.values())  # Llamamos a la función para buscar pares de DNIs con sumas iguales
 
-def menu_compatibilidad_dnis(interseccion_conjuntos, conjuntos_dni_alumnos):
+def menu_compatibilidad_dnis(conjuntos_dni_alumnos):
     # El conjunto A y el conjunto B se consideran altamente compatibles si tienen tres o más dígitos en común.
     def alta_compatibilidad(nombre1, conjunto1, nombre2, conjunto2):
         interseccion = interseccion_conjuntos(conjunto1, conjunto2)  # Usamos la función de intersección definida anteriormente
@@ -274,15 +274,15 @@ def menu_prod_cartesiano_anios_edades(anios_nacimiento):
 ################## MENU #############################
 opciones = {
     '1': lambda: menu_union(conjuntos_dni_alumnos),
-    '2': lambda: menu_interseccion(conjuntos_dni_alumnos, interseccion_conjuntos),
+    '2': lambda: menu_interseccion(conjuntos_dni_alumnos),
     '3': lambda: menu_diferencia(conjuntos_dni_alumnos),
     '4': lambda: menu_diferencia_simetrica(conjuntos_dni_alumnos),
     '5': lambda: menu_frecuencia(dni_alumnos),
-    '6': lambda: menu_suma_digitos(suma_digitos_dni, dni_alumnos),
+    '6': lambda: menu_suma_digitos(dni_alumnos),
     '7': lambda: menu_digito_compartido(conjuntos_dni_alumnos),
     '8': lambda: menu_diversidad_alta(conjuntos_dni_alumnos),
     '9': lambda: menu_suma_total_digitos_dni(dni_alumnos),
-    '10': lambda: menu_compatibilidad_dnis(interseccion_conjuntos, conjuntos_dni_alumnos),
+    '10': lambda: menu_compatibilidad_dnis(conjuntos_dni_alumnos),
     '11': lambda: menu_cant_anios_pares_impares(lista_anios),
     '12': lambda: menu_grupo_z_u_old_school(lista_anios),
     '13': lambda: menu_verifica_bisiesto(lista_anios),
